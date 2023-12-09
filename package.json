@@ -1,0 +1,69 @@
+{
+  "name": "animation-shootingstar",
+  "description": "Webcomponent animation-shootingstar following open-wc recommendations",
+  "license": "Apache-2.0",
+  "author": "manufosela",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/animation-shootingstar.git"
+  },
+  "module": "animation-shootingstar.js",
+  "bugs": {
+    "url": "https://github.com/manufosela/animation-shootingstar/issues"
+  },
+  "homepage": "https://github.com/manufosela/animation-shootingstar",
+  "keywords": [
+    "webcomponents",
+    "open-wc",
+    "lit-element",
+    "lit"
+  ],
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server",
+    "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "test": "web-test-runner --coverage",
+    "test:watch": "web-test-runner --watch"
+  },
+  "dependencies": {
+    "lit": "^3.1.0"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "@open-wc/eslint-config": "^12.0.2",
+    "@open-wc/testing": "^4.0.0",
+    "@web/dev-server": "^0.4.1",
+    "@web/test-runner": "^0.18.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.0"
+  },
+  "customElements": "custom-elements.json",
+  "eslintConfig": {
+    "extends": [
+      "@open-wc",
+      "prettier"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
